@@ -21,7 +21,7 @@ app.get("/",(req,res) => {
   res.sendFile(path.join(__dirname, "/public/index.html"))
 })
 
-app.post("/error",(req,res) => {
+app.get("/error",(req,res) => {
   try {
     nonExistentFunction();
   } catch (error) {
