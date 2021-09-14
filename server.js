@@ -29,6 +29,15 @@ app.get("/error",(req,res) => {
     // console.error(error);
     
   }})
+  app.post("/bad",(req,res) => {
+    let {color} = req.body
+    try{
+      res.status(200).send(colors)
+      
+    }catch(error){
+      rollbar.critical('value not found')
+    }
+  })
 
 app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4545;
