@@ -26,7 +26,7 @@ app.post("/error",(req,res) => {
     nonExistentFunction();
   } catch (error) {
     rollbar.error('that didnt work ')
-    console.error(error);
+    // console.error(error);
     
   }})
 
