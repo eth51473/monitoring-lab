@@ -11,7 +11,8 @@
 <body>
     <h1>hello</h1>
     <script>
-      axios.get('/error').then(res => console.log('hello')).catch(err => console.log(err))
+      axios.get('/error').then(res => console.log('bad job')).catch(err => console.log(err))
+      axios.post('/hello', {word: "hello"}).then(res => console.log('hello')).catch(err => console.log(err))
       axios.post('/bad', {color: "blue"}).then(res => {
         console.log(res)
       }).catch(err => console.log(err))

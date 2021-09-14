@@ -38,6 +38,16 @@ app.get("/error",(req,res) => {
       rollbar.critical('value not found')
     }
   })
+  app.post("/hello",(req,res) => {
+    let {word} = req.body
+    if (word === "world"){
+      res.status(200).send(word)
+    }else{
+      rollbar.warning("that was the wrong value in the object")
+    }
+    
+      rollbar.critical('value not found')
+  })
 
 app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4545;
